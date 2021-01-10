@@ -1,0 +1,25 @@
+.signup{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  mat-form-field{
+    width: 100%;
+  }
+  .input{
+    width: 100%;
+  }
+  
+  .auth__status{
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+  
+  }
+  
+  .signup_back{
+    /* background: url('../../assets/sign-up.jpeg'); */
+    background-size: cover;
+    height: 100vh;
+  }
+  

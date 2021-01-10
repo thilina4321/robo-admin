@@ -1,0 +1,54 @@
+<div class="signup_back">
+
+    <div *ngIf="!isLoading">
+      <div class="signup">
+        <br><br><br>
+        <mat-card>
+          <form (submit)="onSubmit(f)" #f="ngForm">
+            <mat-form-field>
+              <input
+                class="input"
+                ngModel
+                name="email"
+                type="email"
+                matInput
+                placeholder="Email"
+              />
+            </mat-form-field>
+    
+            <mat-form-field>
+              <input
+                class="input"
+                ngModel
+                name="password"
+                type="password"
+                matInput
+                placeholder="Password"
+              />
+            </mat-form-field>
+    
+            <div style="width: 100%; text-align: end">
+              <button mat-raised-button>Sign up</button>
+            </div>
+    
+    
+          </form>
+        </mat-card>
+      
+      </div>
+    
+    
+    </div>
+    
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      "
+      *ngIf="isLoading"
+    >
+      <mat-spinner></mat-spinner>
+    </div>
+    </div>
