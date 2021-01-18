@@ -1,0 +1,27 @@
+.profile{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.pic{
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+}
+
+.users{
+  display: flex;
+}
+
+.patient{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.custodian{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

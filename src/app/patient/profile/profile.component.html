@@ -1,0 +1,27 @@
+<div class="profile">
+  <div class="pic"></div>
+
+  <div class="users">
+    <div class="patient">
+      <h1> Patient </h1>
+      <h1>Name: {{ patient?.patient?.patientName }}</h1>
+      <p>Email: {{ patient?.patient?.patientEmail }}</p>
+      <p>Address: {{ patient?.patient?.patientAddress }}</p>
+      <p>Gender : {{ patient?.patient?.patientGender }}</p>
+      <p>NIC : {{ patient?.patient?.patientNIC }}</p>
+      <p>Tele: {{ patient?.patient?.patientTeleNum }}</p>
+      <p>Mobile Number : {{ patient?.patient?.patientMobile }}</p>
+    </div>
+
+    <div class="custodian">
+      <h1>Custodian</h1>
+      <h1>Name: {{ patient?.custodian?.custodianName }}</h1>
+      <p>Email: {{ patient?.custodian?.custodianEmail }}</p>
+      <p>Address: {{ patient?.custodian?.custodianAddress }}</p>
+      <p>Gender : {{ patient?.custodian?.custodianGenger }}</p>
+      <p>NIC : {{ patient?.custodian?.custodianNIC }}</p>
+      <p>Tele: {{ patient?.custodian?.custodianTele }}</p>
+      <p>Mobile Number : {{ patient?.custodian?.custodianMobile }}</p>
+    </div>
+  </div>
+</div>

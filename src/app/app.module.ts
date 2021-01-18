@@ -13,10 +13,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AdminComponent } from './admin/admin.component';
-import { PComponent } from './p/p.component';
-import { AuthComponent } from './auth/auth.component';
-import { LoginComponent } from './auth/login/login.component';
-
+import { SystemComponent } from './auth/system.component';
+import { PatientModule } from './patient/patient.module';
+import { DoctorModule } from './doctor/doctor.module';
 
 
 
@@ -24,9 +23,7 @@ import { LoginComponent } from './auth/login/login.component';
   declarations: [
     AppComponent,
     AdminComponent,
-    PComponent,
-    AuthComponent,
-    LoginComponent,
+    SystemComponent,
 
 
   ],
@@ -39,7 +36,9 @@ import { LoginComponent } from './auth/login/login.component';
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    PatientModule,
+    DoctorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

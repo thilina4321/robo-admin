@@ -1,0 +1,50 @@
+.patient_reg{
+  width: 90%;
+  margin: 0 auto;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.input{
+  color: blueviolet;
+
+}
+
+ng-reflect-placeholder{
+  color: red;
+}
+
+data-placeholder{
+  color: red;
+}
+
+::ng-deep .mat-form-field-placeholder{
+  color:yellow;
+  }
+
+
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color:green;
+}
+
+
+.mat-input-element {
+  color: green;
+}
+
+ .ng-untouched{
+   color: green;
+ }
+ .ng-pristine {
+   color: green;
+ }
+
+ cdk-text-field-autofill-monitored{
+   color: green;
+ }
+
+ ng-invalid{
+   color: green;
+ }

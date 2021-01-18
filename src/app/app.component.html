@@ -1,2 +1,9 @@
+<mat-toolbar class="toolbar" color="primary">
+  <p style="flex: 1">Logo</p>
+  <ng-container *ngIf="isAuth">
 
+    <a routerLink="/" mat-button > Admin </a>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+</mat-toolbar>
 <router-outlet></router-outlet>

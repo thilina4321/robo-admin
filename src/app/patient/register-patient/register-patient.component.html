@@ -1,0 +1,212 @@
+
+
+<!-- patient details section -->
+
+<div >
+  <form class="patient_reg" (submit)="goToNext(f)" #f="ngForm">
+    <div *ngIf="isPatient">
+      <h1>Patient Details</h1>
+
+      <mat-form-field>
+        <mat-label>Patient Email </mat-label>
+        <input matInput class="input" required ngModel name="patientEmail" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Patient Password </mat-label>
+        <input matInput class="input" required ngModel name="password" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          class="input"
+          matInput
+          placeholder="Patients Name"
+          class="input"
+          required
+          ngModel
+          name="patientName"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Age"
+          class="input"
+          required
+          ngModel
+          name="patientAge"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Patient NIC"
+          class="input"
+          required
+          ngModel
+          name="patientNIC"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Patient Address"
+          class="input"
+          required
+          ngModel
+          name="patientAddress"
+        />
+      </mat-form-field>
+
+      <mat-radio-group name="patientGender" ngModel>
+        <mat-label> Gender : </mat-label>
+        <mat-radio-button style="margin-right: 10px" value="male"
+          >Mele</mat-radio-button
+        >
+        <mat-radio-button style="margin-right: 10px" value="female"
+          >Femele</mat-radio-button
+        >
+      </mat-radio-group>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Patient Telephone Number"
+          class="input"
+          required
+          ngModel
+          name="patientTeleNum"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Patient Mobile Number"
+          class="input"
+          required
+          ngModel
+          name="patientMobile"
+        />
+      </mat-form-field>
+
+
+
+      <div style="text-align: end; width: 100%">
+        <button mat-raised-button>Next</button>
+      </div>
+    </div>
+  </form>
+
+  <form (submit)="onSubmit(form)" #form="ngForm" class="patient_reg">
+    <div *ngIf="!isPatient">
+      <h1>Custodian Details</h1>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Custodian Name"
+          class="input"
+          required
+          ngModel
+          name="custodianName"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Custodian Age"
+          class="input"
+          required
+          ngModel
+          name="custodianAge"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Custodian NIC"
+          class="input"
+          required
+          ngModel
+          name="custodianNIC"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Custodian Address"
+          class="input"
+          required
+          ngModel
+          name="custodianAddress"
+        />
+      </mat-form-field>
+
+      <mat-radio-group name="custodianGenger" ngModel>
+        <mat-label> Gender : </mat-label>
+        <mat-radio-button style="margin-right: 10px" value="male"
+          >Mele</mat-radio-button
+        >
+        <mat-radio-button style="margin-right: 10px" value="female"
+          >Femele</mat-radio-button
+        >
+      </mat-radio-group>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Relationship to patient"
+          class="input"
+          required
+          ngModel
+          name="relationship"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Custodian Telephone No"
+          class="input"
+          required
+          ngModel
+          name="custodianTele"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Custodian Mobile"
+          class="input"
+          required
+          ngModel
+          name="custodianMobile"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Custodian Email"
+          class="input"
+          required
+          ngModel
+          name="custodianEmail"
+        />
+      </mat-form-field>
+
+      <div style="width: 100%; text-align: end">
+        <button mat-raised-button>Save</button>
+      </div>
+    </div>
+  </form>
+</div>

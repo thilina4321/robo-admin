@@ -1,0 +1,11 @@
+.profile{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.pic{
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+}

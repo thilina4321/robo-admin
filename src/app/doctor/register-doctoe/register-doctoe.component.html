@@ -1,0 +1,116 @@
+<div>
+  <form class="patient_reg" (submit)="onSubmit(f)" #f="ngForm">
+    <div *ngIf="isDoctor">
+      <h1>Doctor Details</h1>
+
+      <mat-form-field>
+        <input
+          class="input"
+          matInput
+          placeholder="Doctor Email"
+          class="input"
+          required
+          ngModel
+          name="email"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          class="input"
+          matInput
+          placeholder="Password"
+          class="input"
+          required
+          ngModel
+          name="password"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          class="input"
+          matInput
+          placeholder="Doctor Name"
+          class="input"
+          required
+          ngModel
+          name="name"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="NIC"
+          class="input"
+          required
+          ngModel
+          name="nic"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Address"
+          class="input"
+          required
+          ngModel
+          name="address"
+        />
+      </mat-form-field>
+
+      <mat-radio-group name="patientGender" ngModel>
+        <mat-label> Gender : </mat-label>
+        <mat-radio-button style="margin-right: 10px" value="male"
+          >Mele</mat-radio-button
+        >
+        <mat-radio-button style="margin-right: 10px" value="female"
+          >Femele</mat-radio-button
+        >
+      </mat-radio-group>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Telephone Number"
+          class="input"
+          required
+          ngModel
+          name="teleNumber"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Mobile Number"
+          class="input"
+          required
+          ngModel
+          name="mobileNumber"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label> University </mat-label>
+        <input matInput class="input" required ngModel name="university" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label> Specialist Side </mat-label>
+        <input matInput class="input" required ngModel name="specialistSide" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label> Experience </mat-label>
+        <input matInput class="input" required ngModel name="exeperience" />
+      </mat-form-field>
+
+      <div style="text-align: end; width: 100%">
+        <button mat-raised-button>Save</button>
+      </div>
+    </div>
+  </form>
+</div>

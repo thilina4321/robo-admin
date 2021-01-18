@@ -1,0 +1,19 @@
+<form class="login" (ngSubmit)="onLogin(form)" #form="ngForm">
+
+  <mat-form-field>
+    <label> Email </label>
+    <input name="email" #email matInput ngModel required/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label> Password </label>
+    <input name="password" matInput ngModel required #password/>
+
+  </mat-form-field>
+
+  <mat-error *ngIf="error"> Email and password both required </mat-error>
+  <mat-error *ngIf="unauth"> Invalid Login </mat-error>
+
+  <button type="submit" style="height: 50px;font-size: 30px;" mat-raised-button color="primary"> Log In </button>
+
+</form>
