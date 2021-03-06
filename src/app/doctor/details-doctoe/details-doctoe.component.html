@@ -16,14 +16,29 @@
     <td mat-cell *matCellDef="let element"> {{element.teleNumber}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="uid">
-    <th mat-header-cell *matHeaderCellDef> Actionss </th>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td mat-cell *matCellDef="let element">
-          <a mat-icon-button (click)="doctorProfile(element.uid)"> <mat-icon>home</mat-icon> </a>
+
+          <button mat-icon-button (click)="doctorProfile(element.id)">
+             <mat-icon>home</mat-icon> </button>
+
+          <button mat-icon-button (click)="doctorUpdate(element.id)">
+             <mat-icon>edit</mat-icon> </button>
+
+          <button mat-icon-button (click)="doctorDelete(element.id)">
+             <mat-icon>delete</mat-icon> </button>
+
+
 
         </td>
 
+
   </ng-container>
+
+
+
+
 
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

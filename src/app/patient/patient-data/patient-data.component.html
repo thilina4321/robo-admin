@@ -16,10 +16,17 @@
     <td mat-cell *matCellDef="let element"> {{element.patient.patientTeleNum}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="uid">
+  <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> Actionss </th>
         <td mat-cell *matCellDef="let element">
-          <a mat-icon-button (click)="patientProfile(element.uid)"> <mat-icon>home</mat-icon> </a>
+          <button mat-icon-button (click)="patientProfile(element.id)">
+             <mat-icon>home</mat-icon> </button>
+
+             <button mat-icon-button (click)="patientUpdate(element.id)">
+              <mat-icon>edit</mat-icon> </button>
+
+           <button mat-icon-button (click)="patientDelete(element.id)">
+              <mat-icon>delete</mat-icon> </button>
 
         </td>
 

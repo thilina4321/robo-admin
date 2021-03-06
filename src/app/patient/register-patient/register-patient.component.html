@@ -1,7 +1,4 @@
 
-
-<!-- patient details section -->
-
 <div >
   <form class="patient_reg" (submit)="goToNext(f)" #f="ngForm">
     <div *ngIf="isPatient">
@@ -9,12 +6,14 @@
 
       <mat-form-field>
         <mat-label>Patient Email </mat-label>
-        <input matInput class="input" required ngModel name="patientEmail" />
+        <input matInput class="input" required [ngModel]="patient?.patient?.patientEmail"
+         name="patientEmail" />
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field *ngIf="!patient">
         <mat-label>Patient Password </mat-label>
-        <input matInput class="input" required ngModel name="password" />
+        <input matInput class="input" required
+        ngModel name="password" />
       </mat-form-field>
 
       <mat-form-field>
@@ -24,7 +23,7 @@
           placeholder="Patients Name"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.patient?.patientName"
           name="patientName"
         />
       </mat-form-field>
@@ -35,7 +34,7 @@
           placeholder="Age"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.patient?.patientAge"
           name="patientAge"
         />
       </mat-form-field>
@@ -46,7 +45,7 @@
           placeholder="Patient NIC"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.patient?.patientNIC"
           name="patientNIC"
         />
       </mat-form-field>
@@ -57,12 +56,12 @@
           placeholder="Patient Address"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.patient?.patientAddress"
           name="patientAddress"
         />
       </mat-form-field>
 
-      <mat-radio-group name="patientGender" ngModel>
+      <mat-radio-group name="patientGender" ngModel [value]="patient?.patient?.patientGender">
         <mat-label> Gender : </mat-label>
         <mat-radio-button style="margin-right: 10px" value="male"
           >Mele</mat-radio-button
@@ -78,7 +77,7 @@
           placeholder="Patient Telephone Number"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.patient?.patientTeleNum"
           name="patientTeleNum"
         />
       </mat-form-field>
@@ -89,7 +88,7 @@
           placeholder="Patient Mobile Number"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.patient?.patientMobile"
           name="patientMobile"
         />
       </mat-form-field>
@@ -112,7 +111,7 @@
           placeholder="Custodian Name"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.custodianName"
           name="custodianName"
         />
       </mat-form-field>
@@ -123,7 +122,7 @@
           placeholder="Custodian Age"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.custodianAge"
           name="custodianAge"
         />
       </mat-form-field>
@@ -134,7 +133,7 @@
           placeholder="Custodian NIC"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.custodianNIC"
           name="custodianNIC"
         />
       </mat-form-field>
@@ -145,12 +144,13 @@
           placeholder="Custodian Address"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.custodianAddress"
           name="custodianAddress"
         />
       </mat-form-field>
 
-      <mat-radio-group name="custodianGenger" ngModel>
+      <mat-radio-group name="custodianGenger" ngModel
+      [value]="patient?.custodian?.custodianGenger">
         <mat-label> Gender : </mat-label>
         <mat-radio-button style="margin-right: 10px" value="male"
           >Mele</mat-radio-button
@@ -163,10 +163,10 @@
       <mat-form-field>
         <input
           matInput
-          placeholder="Relationship to patient"
-          class="input"
+          placeholder="Relationship to patient?"
+        ?  class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.relationship"
           name="relationship"
         />
       </mat-form-field>
@@ -177,7 +177,7 @@
           placeholder="Custodian Telephone No"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.custodianTele"
           name="custodianTele"
         />
       </mat-form-field>
@@ -188,7 +188,7 @@
           placeholder="Custodian Mobile"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.custodianMobile"
           name="custodianMobile"
         />
       </mat-form-field>
@@ -199,7 +199,7 @@
           placeholder="Custodian Email"
           class="input"
           required
-          ngModel
+          [ngModel]="patient?.custodian?.custodianEmail"
           name="custodianEmail"
         />
       </mat-form-field>

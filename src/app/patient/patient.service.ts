@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { custodian, Patient } from './patient';
 
 @Injectable({
@@ -56,23 +57,70 @@ export class PatientService {
   }
 
   getPatient(){
-    this.firestore.collection('patients').valueChanges().subscribe((patients:any)=>{
-      console.log(patients);
+    this.firestore
+      .collection('patients')
+      .snapshotChanges()
+      .pipe(
+        map((actions) =>
+          actions.map((a) => {
+            const data = a.payload.doc.data() as {};
+            return {
+              id: a.payload.doc.id,
+              ...data,
+            };
+          })
+        )
+      )
+      .subscribe((patients: any) => {
 
-      this.patients = patients
-      this.patients$.next(this.patients)
+        this.patients = patients;
+        this.patients$.next(this.patients);
+      });
+  }
+
+  getSpecificPatient(id:any){
+    this.firestore
+    .collection('patients')
+    .doc(id)
+    .valueChanges()
+    .subscribe((doctor: any) => {
+
+
+      this.sPatients$.next(doctor);
+
+    });
+
+  }
+
+
+
+  findPatientToUpdate(id:string){
+    return this.firestore
+      .collection('patients')
+      .doc(id)
+      .valueChanges()
+
+  }
+
+  updatePatient(id:string, data:{}){
+    this.firestore.collection('patients').doc(id)
+    .set(data).then((doctor:any)=>{
+      this.router.navigate(['/patient'])
+
+    }).catch(e=>{
+      console.log(e);
 
     })
   }
 
-  getSpecificPatient(id:any){
-     this.firestore.collection('patients',(ref) => ref.where('uid', '==', id)
+  deletePatient(id:string){
+    this.firestore.collection('patients').doc(id).delete().then(()=>{
+      this.patients = this.patients.filter(doctor=> doctor.id != id)
+      this.patients$.next(this.patients)
+    }).catch(e=>{
+      console.log(e);
 
-    ).valueChanges().subscribe((patient:any)=>{
-
-      this.sPatients$.next(patient[0])
     })
-
   }
 
   clearSubscription() {

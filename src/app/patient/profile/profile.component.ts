@@ -20,16 +20,20 @@ export class PatientProfileComponent implements OnInit {
       if(paramMap.has('id')){
         this.patientService.getPatient()
         const id = paramMap.get('id')
+
+        if(id)
         this.patientService.getSpecificPatient(id)
 
-        this.patientService.sPatients$.subscribe((patient:any)=>{
+        this.patientService.sPatients$.subscribe((doctor:any)=>{
+          console.log(doctor);
+          this.patient = doctor
 
-          this.patient = patient
-          console.log(this.patient);
         })
 
       }
     })
+
+
   }
 
 }

@@ -14,7 +14,6 @@ export class SystemComponent implements OnInit {
 
   ngOnInit(): void {
     this.systemService.isAuth.subscribe(auth=>{
-      console.log(auth);
 
       if(auth){
         this.router.navigate(['/'])

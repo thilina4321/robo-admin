@@ -12,22 +12,29 @@ export class DetailsDoctoeComponent implements OnInit {
 
   constructor(private doctorService:DoctorService, private router:Router) { }
 
-  displayedColumns: string[] = [ 'nic', 'name', 'teleNumber','uid'];
+  displayedColumns: string[] = [ 'nic', 'name', 'teleNumber', 'id'];
   dataSource:any = [];
 
   ngOnInit(): void {
     this.doctorService.getDoctors()
     this.doctorService.doctors$.subscribe(doctors=>{
-      console.log(doctors);
       this.dataSource = doctors
 
     })
 
   }
 
-  doctorProfile(id:string){
-    this.router.navigate(['/doctor-profile', id])
+  doctorProfile( id:string){
+    this.router.navigate(['/doctor-profile',id])
 
+  }
+
+  doctorUpdate(id:string){
+    this.router.navigate(['/doctor-register', id])
+  }
+
+  doctorDelete(id:string){
+    this.doctorService.deleteDoctor(id)
   }
 
 }

@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
       if(paramMap.has('id')){
         this.doctorService.getDoctors()
         const id = paramMap.get('id')
+        if(id)
         this.doctorService.getSpecificDoctor(id)
 
         this.doctorService.sDoctors$.subscribe((doctor:any)=>{

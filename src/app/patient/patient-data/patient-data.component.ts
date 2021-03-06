@@ -12,7 +12,7 @@ export class PatientDataComponent implements OnInit {
 
   constructor(private router:Router, private patientService:PatientService) { }
 
-  displayedColumns: string[] = [ 'nic', 'name', 'teleNumber','uid'];
+  displayedColumns: string[] = [ 'nic', 'name', 'teleNumber','id'];
   dataSource:any = [];
 
   ngOnInit(): void {
@@ -28,6 +28,14 @@ export class PatientDataComponent implements OnInit {
   patientProfile(id:string){
     this.router.navigate(['/patient-profile', id])
 
+  }
+
+  patientUpdate(id:string){
+    this.router.navigate(['/patient-register', id])
+  }
+
+  patientDelete(id:string){
+    this.patientService.deletePatient(id)
   }
 
 

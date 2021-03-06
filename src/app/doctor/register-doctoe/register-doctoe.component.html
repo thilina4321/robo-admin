@@ -10,12 +10,13 @@
           placeholder="Doctor Email"
           class="input"
           required
-          ngModel
+          [ngModel]="doctor?.email"
           name="email"
         />
       </mat-form-field>
 
-      <mat-form-field>
+
+      <mat-form-field *ngIf="!doctor">
         <input
           class="input"
           matInput
@@ -34,7 +35,7 @@
           placeholder="Doctor Name"
           class="input"
           required
-          ngModel
+          [ngModel]="doctor?.name"
           name="name"
         />
       </mat-form-field>
@@ -45,7 +46,7 @@
           placeholder="NIC"
           class="input"
           required
-          ngModel
+          [ngModel]="doctor?.nic"
           name="nic"
         />
       </mat-form-field>
@@ -56,12 +57,12 @@
           placeholder="Address"
           class="input"
           required
-          ngModel
+          [ngModel]="doctor?.address"
           name="address"
         />
       </mat-form-field>
 
-      <mat-radio-group name="patientGender" ngModel>
+      <mat-radio-group name="patientGender" ngModel  [value]="doctor?.gender">
         <mat-label> Gender : </mat-label>
         <mat-radio-button style="margin-right: 10px" value="male"
           >Mele</mat-radio-button
@@ -77,7 +78,8 @@
           placeholder="Telephone Number"
           class="input"
           required
-          ngModel
+
+          [ngModel]="doctor?.teleNumber"
           name="teleNumber"
         />
       </mat-form-field>
@@ -88,24 +90,31 @@
           placeholder="Mobile Number"
           class="input"
           required
-          ngModel
+
+          [ngModel]="doctor?.teleNumber"
           name="mobileNumber"
         />
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label> University </mat-label>
-        <input matInput class="input" required ngModel name="university" />
+        <mat-label> SLMC Number </mat-label>
+        <input matInput class="input" required
+        [ngModel]="doctor?.university"
+         name="university" />
       </mat-form-field>
 
       <mat-form-field>
         <mat-label> Specialist Side </mat-label>
-        <input matInput class="input" required ngModel name="specialistSide" />
+        <input matInput class="input" required
+        [ngModel]="doctor?.specialistSide"
+         name="specialistSide" />
       </mat-form-field>
 
       <mat-form-field>
         <mat-label> Experience </mat-label>
-        <input matInput class="input" required ngModel name="exeperience" />
+        <input matInput
+        [ngModel]="doctor?.exeperience"
+        class="input" required  name="exeperience" />
       </mat-form-field>
 
       <div style="text-align: end; width: 100%">

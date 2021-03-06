@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { custodian, Patient } from '../patient';
 import { PatientService } from '../patient.service';
 
@@ -13,12 +13,31 @@ export class RegisterPatientComponent implements OnInit {
 
   constructor(private router:Router,
     private patientService:PatientService,
+    private route:ActivatedRoute,
     ) { }
 
+    id!:string | null
+    patient! :{patient:Patient, custodian:custodian}
 
   ngOnInit(): void {
 
 
+    this.route.paramMap.subscribe((paramMap:ParamMap)=>{
+
+      this.id = paramMap.get('id')
+
+
+
+
+    if(this.id)
+    this.patientService.findPatientToUpdate(this.id).subscribe((doctor: any) => {
+      this.patient = doctor
+
+
+
+    });
+
+  })
 
 
   }
@@ -37,8 +56,16 @@ export class RegisterPatientComponent implements OnInit {
   onSubmit(form:NgForm){
     this.custodianData = form.value
 
+    if(this.id){
+      this.patientService.updatePatient(this.id, form.value)
 
-    this.patientService.addPatientsDataToDatabase(this.password, this.patientData, this.custodianData)
+    }else{
+      this.patientService.addPatientsDataToDatabase(this.password, this.patientData, this.custodianData)
+
+
+    }
+
+
 
 
   }

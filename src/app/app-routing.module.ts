@@ -22,14 +22,15 @@ const routes: Routes = [
 
   //patients
   {path:'patient', component:DashboardComponent},
+  {path:'patient-register', component:RegisterPatientComponent},
+  {path:'patient-register/:id', component:RegisterPatientComponent},
   {path:'patient-data', component:PatientDataComponent},
-  {path:'patient-register', component:RegisterPatientComponent},
-  {path:'patient-register', component:RegisterPatientComponent},
   {path:'patient-profile/:id', component:PatientProfileComponent},
 
   //doctor
   {path:'doctor', component:DashboardComponentDoctor},
   {path:'doctor-register', component:RegisterDoctoeComponent},
+  {path:'doctor-register/:id', component:RegisterDoctoeComponent},
   {path:'doctor-data', component:DetailsDoctoeComponent},
   {path:'doctor-profile/:id', component:ProfileComponent},
 
