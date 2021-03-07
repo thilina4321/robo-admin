@@ -6,7 +6,8 @@
 
       <mat-form-field>
         <mat-label>Patient Email </mat-label>
-        <input matInput class="input" required [ngModel]="patient?.patient?.patientEmail"
+        <input matInput class="input" required
+        [ngModel]="patient?.patient?.patientEmail"
          name="patientEmail" />
       </mat-form-field>
 
@@ -17,8 +18,8 @@
       </mat-form-field>
 
       <mat-form-field>
+
         <input
-          class="input"
           matInput
           placeholder="Patients Name"
           class="input"
@@ -103,9 +104,10 @@
 
   <form (submit)="onSubmit(form)" #form="ngForm" class="patient_reg">
     <div *ngIf="!isPatient">
-      <h1>Custodian Details</h1>
 
-      <mat-form-field>
+       <h1>Custodian Details</h1>
+
+     <mat-form-field>
         <input
           matInput
           placeholder="Custodian Name"
@@ -116,7 +118,7 @@
         />
       </mat-form-field>
 
-      <mat-form-field>
+     <mat-form-field>
         <input
           matInput
           placeholder="Custodian Age"
@@ -164,7 +166,7 @@
         <input
           matInput
           placeholder="Relationship to patient?"
-        ?  class="input"
+          class="input"
           required
           [ngModel]="patient?.custodian?.relationship"
           name="relationship"

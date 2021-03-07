@@ -48,9 +48,11 @@ export class RegisterPatientComponent implements OnInit {
   isPatient = true
 
   goToNext(form:NgForm){
-    this.patientData = form.value
-    this.password = form.value.password
+    // this.patientData = form.value
+    // this.password = form.value.password
     this.isPatient = false
+    // console.log('hello');
+
   }
 
   onSubmit(form:NgForm){
