@@ -48,10 +48,9 @@ export class RegisterPatientComponent implements OnInit {
   isPatient = true
 
   goToNext(form:NgForm){
-    // this.patientData = form.value
-    // this.password = form.value.password
+    this.patientData = form.value
+    this.password = form.value.password
     this.isPatient = false
-    // console.log('hello');
 
   }
 
@@ -59,7 +58,7 @@ export class RegisterPatientComponent implements OnInit {
     this.custodianData = form.value
 
     if(this.id){
-      this.patientService.updatePatient(this.id, form.value)
+      this.patientService.updatePatient(this.id, { patient: this.patientData,custodian: this.custodianData})
 
     }else{
       this.patientService.addPatientsDataToDatabase(this.password, this.patientData, this.custodianData)
